@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ShortUserInfo, UserInfo } from '@app/_models';
-
+//import { ShortUserInfo, UserInfo } from '@app/_models';
+import { ShortUserInfo, UserInfo } from '../_models';
 @Injectable({
   providedIn: 'root'
 })

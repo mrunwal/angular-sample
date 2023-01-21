@@ -1,7 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap } from 'rxjs';
-import { UserInfoRes  } from '@app/_models';
+//import { UserInfoRes  } from '@app/_models';
+import { UserInfoRes  } from '../_models';
 import { environment } from '@environments/environment';
 
 @Injectable({
