@@ -12,21 +12,25 @@
       </div>
       </form>
       <!-- Result set -->
-      <p class="text-muted mt-5">Search Result</p>
+      <p class="text-muted mt-5" *ngIf="users.length">Search Result</p>
       <div>
-        
-        <div class="card rounded-1 p-2" *ngFor="let user of users">
-          <div class="row">
-            <div class="col-4">
-              <div class="text-muted">User Image</div>
-              <img [src]="user.avatar_url" alt="user image" class="img-fluid rounded-1" />
-            </div>
-            <div class="col-8">
-              <div class="text-muted">Github Username</div>
-              <div class="text-dark">{{user.login}}</div>
-            </div>
-          </div> <!-- row -->
-        </div> <!-- card -->
+        <div *ngIf="users.length > 0; else noResult">
+          <div class="card rounded-1 p-2" *ngFor="let user of users">
+            <div class="row">
+              <div class="col-4">
+                <div class="text-muted">User Image</div>
+                <img [src]="user.avatar_url" alt="user image" class="img-fluid rounded-1" />
+              </div>
+              <div class="col-8">
+                <div class="text-muted">Github Username</div>
+                <div class="text-dark">{{user.login}}</div>
+              </div>
+            </div> <!-- row -->
+          </div> <!-- card -->
+        </div>
+        <ng-template #noResult>
+          <div class="text-muted">No record found.</div>
+        </ng-template>
       </div>
     </div>
   </div>

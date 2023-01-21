@@ -17,6 +17,10 @@ export class HistoryComponent implements OnInit, OnDestroy {
     this.UsersSearch =this.localService.getData(storageKey)??[];
     console.log(this.UsersSearch);
   }
+  clearHistory(){
+    this.localService.removeData(storageKey);
+    this.UsersSearch= [];
+  }
   ngOnDestroy(): void {
     
   }
