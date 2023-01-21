@@ -1,1 +1,53 @@
-<p>history works!</p>
+<div class="container">
+  <div class="row justify-content-sm-center mt-5">
+    <div class="col col-lg-6 sm-auto p-2">
+      <h5 class="text-center ">Your search history</h5>
+      <!-- Result set -->
+      <p class="text-muted mt-5">Search Result</p>
+      <div>
+        <table class="table bg-white table-bordered">
+          <colgroup>
+            <col class="col-md-4">
+            <col class="col-md-8">
+          </colgroup>
+          <thead class="table-light">
+          <tr>
+            <th scope="col" class="text-muted mw-200">Search</th>
+            <th scope="col" class="text-muted">Result</th>
+          </tr>
+          </thead>
+          <tbody class="" >
+            <ng-template ngFor [ngForOf]="UsersSearch" let-userSearch >
+            <tr>
+              <td>
+                <div class="text-dark">{{userSearch.search}}</div>
+              </td>
+              <td>
+                <div *ngIf="userSearch.items.length > 0; else noResult">
+                  <div class="card rounded-1 p-2 mb-1" *ngFor="let user of userSearch.items">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="text-muted">User Image</div>
+                        <img [src]="user.avatar_url" alt="user image" class="img-fluid rounded-1" />
+                      </div>
+                      <div class="col-8">
+                        <div class="text-muted">Github Username</div>
+                        <div class="text-dark">{{user.login}}</div>
+                      </div>
+                    </div> <!-- row -->
+                  </div> <!-- card -->
+                </div>
+                <ng-template #noResult>
+                  <div class="text-muted">No Result</div>
+                </ng-template>
+              </td>
+            </tr> <!-- row -->
+            </ng-template>
+          </tbody> <!-- card -->
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
