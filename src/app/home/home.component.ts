@@ -2,7 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 //import { UserInfo, UserInfoRes, storageKey, ShortUserInfo } from '@app/_models';
 import { UserInfo, UserInfoRes, storageKey, ShortUserInfo } from '../_models';
-import { GithubService, LocalService } from '@app/_services'
+//import { GithubService, LocalService } from '@app/_services'
+import { GithubService, LocalService } from '../_services'
 
 import { Subject, takeUntil } from 'rxjs';
 @Component({
